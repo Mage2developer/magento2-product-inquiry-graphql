@@ -1,0 +1,40 @@
+type Query {
+    inquiry (
+        sku: String @doc(description: "SKU of Current Product")
+        display_front: Int @doc(description: "Is product inquiry display in front")
+    ): Inquiries @resolver(class: "Mage2\\Inquiry\\Model\\Resolver\\Inquiries") @doc(description: "Inquiries return the information about product inquiries")
+}
+
+type Inquiries @doc(description: "Inquiries grapgql gather of all product inquiry") {
+    totalCount: Int @doc(description: "Total numnber of product inquiries")
+    items: [Inquiry] @doc(description: "An array of product inquiries")
+}
+
+type Mutation {
+    createInquiry (input: InquiryInput!): InquiryOutput @resolver(class: "\\Mage2\\Inquiry\\Model\\Resolver\\CreateInquiry") @doc(description:"Create inquiry")
+}
+
+input InquiryInput {
+    sku: String @doc(description: "Cusrrent product sku")
+    name: String @doc(description: "Customer name")
+    email: String @doc(description: "Customer email address")
+    mobile_number: String @doc(description: "Customer mobile number")
+    message: String @doc(description: "Inquiry messages added by customer")
+}
+
+type InquiryOutput {
+    inquiry: Inquiry!
+}
+
+type Inquiry @doc(description: "Inquiry defines product inquiry details") {
+    inquiry_id: Int @doc(description: "Inquiry Id of product inquiry")
+    name: String @doc(description: "Customer name")
+    email: String @doc(description: "Customer email address")
+    mobile_number: String @doc(description: "Customer mobile number")
+    message: String @doc(description: "Inquiry messages added by customer")
+    sku: String @doc(description: "Cusrrent product sku")
+    status: Int @doc(description: "Status of product inquiry")
+    display_front: Int @doc(description: "Is inquiry display in front")
+    admin_message: String @doc(description: "Reply text given by Admin user")
+    created_at: String @doc(description: "Date time when inquiry added")
+}

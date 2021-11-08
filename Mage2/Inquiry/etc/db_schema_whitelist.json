@@ -1,0 +1,23 @@
+{
+    "mage2_inquiry": {
+        "column": {
+            "inquiry_id": true,
+            "name": true,
+            "email": true,
+            "mobile_number": true,
+            "message": true,
+            "sku": true,
+            "status": true,
+            "display_front": true,
+            "admin_message": true,
+            "created_at": true
+        },
+        "index": {
+            "MAGE2_INQUIRY_NAME": true,
+            "MAGE2_INQUIRY_EMAIL": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

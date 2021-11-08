@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mage2developer
+ * Copyright (C) 2021 Mage2developer
+ *
+ * @category Mage2developer
+ * @package Mage2_Inquiry
+ * @copyright Copyright (c) 2021 Mage2developer
+ * @author Mage2developer <mage2developer@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="inquiry" frontName="inquiry">
+            <module name="Mage2_Inquiry"/>
+        </route>
+    </router>
+</config>

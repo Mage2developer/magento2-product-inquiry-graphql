@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mage2developer
+ * Copyright (C) 2021 Mage2developer
+ *
+ * @category Mage2developer
+ * @package Mage2_Inquiry
+ * @copyright Copyright (c) 2021 Mage2developer
+ * @author Mage2developer <mage2developer@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+
+        <add id="Mage2_Inquiry::inquiry"
+             title="Product Inquiry"
+             module="Mage2_Inquiry"
+             sortOrder="99"
+             resource="Mage2_Inquiry::inquiry"/>
+
+        <add id="Mage2_Inquiry::index"
+             title="Manage Inquiry"
+             module="Mage2_Inquiry"
+             sortOrder="10"
+             action="inquiry/inquiry"
+             resource="Mage2_Inquiry::index"
+             parent="Mage2_Inquiry::inquiry"/>
+
+        <add id="Mage2_Inquiry::configuration"
+             title="Configuration"
+             module="Mage2_Inquiry"
+             sortOrder="11"
+             action="adminhtml/system_config/edit/section/mage2_product_inquiry_section/"
+             resource="Mage2_Inquiry::configuration"
+             parent="Mage2_Inquiry::inquiry"/>
+
+    </menu>
+</config>

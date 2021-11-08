@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mage2developer
+ * Copyright (C) 2021 Mage2developer
+ *
+ * @category Mage2developer
+ * @package Mage2_Inquiry
+ * @copyright Copyright (c) 2021 Mage2developer
+ * @author Mage2developer <mage2developer@gmail.com>
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mage2_inquiry" resource="default" engine="innodb" comment="Mage2 Inquiry">
+        <column name="inquiry_id" xsi:type="int" padding="11" unsigned="true" nullable="false" identity="true"
+                comment="Inquiry Id"/>
+        <column name="name" xsi:type="varchar" length="255" comment="Customer Name"/>
+        <column name="email" xsi:type="varchar" length="255" comment="Customer Email"/>
+        <column name="mobile_number" xsi:type="int" padding="15" unsigned="true" nullable="true"
+                comment="Mobile Number"/>
+        <column name="message" xsi:type="varchar" length="255" comment="Message"/>
+        <column name="sku" xsi:type="varchar" length="255" comment="Product Sku"/>
+        <column name="status" xsi:type="tinyint" padding="2" comment="Status"/>
+        <column name="display_front" xsi:type="tinyint" padding="2" comment="Display in Front"/>
+        <column name="admin_message" xsi:type="varchar" length="255" comment="Admin Message"/>
+        <column name="created_at" xsi:type="timestamp" default="CURRENT_TIMESTAMP" comment="Created At"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="inquiry_id"/>
+        </constraint>
+        <index referenceId="MAGE2_INQUIRY_NAME" indexType="fulltext">
+            <column name="name"/>
+        </index>
+        <index referenceId="MAGE2_INQUIRY_EMAIL" indexType="fulltext">
+            <column name="email"/>
+        </index>
+    </table>
+</schema>

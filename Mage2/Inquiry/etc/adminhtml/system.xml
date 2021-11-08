@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mage2developer
+ * Copyright (C) 2021 Mage2developer
+ *
+ * @category Mage2developer
+ * @package Mage2_Inquiry
+ * @copyright Copyright (c) 2021 Mage2developer
+ * @author Mage2developer <mage2developer@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mage2_developer" translate="label" sortOrder="0">
+            <label>Mage2 Developer</label>
+        </tab>
+        <section id="mage2_product_inquiry_section" translate="label" type="text" sortOrder="10" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Product Inquiry</label>
+            <tab>mage2_developer</tab>
+            <resource>Mage2_Inquiry::mage2_configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Options</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="senderemail" translate="label" type="text" sortOrder="2" showInDefault="1" showInStore="1"
+                       showInWebsite="1">
+                    <label>Sender Email</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                    <validate>validate-email</validate>
+                    <comment><![CDATA[By default contacts email addreess is used.]]></comment>
+                </field>
+                <field id="sendername" translate="label" type="text" sortOrder="3" showInDefault="1" showInStore="1"
+                       showInWebsite="1">
+                    <label>Sender Name</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                    <comment><![CDATA[By default contacts sender name is used.]]></comment>
+                </field>
+                <field id="questionenabled" translate="label" type="select" sortOrder="4" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Question Display</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Show questions & answers above the inquiry form.]]></comment>
+                </field>
+                <field id="questioncount" translate="label" type="text" sortOrder="5" showInDefault="1" showInStore="1"
+                       showInWebsite="1">
+                    <label>Number of question</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                    <validate>validate-number</validate>
+                    <comment><![CDATA[By default latest 5 questions would display.]]></comment>
+                </field>
+                <field id="sendemailtoadmin" translate="label" type="select" sortOrder="6" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Send Email To Admin</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

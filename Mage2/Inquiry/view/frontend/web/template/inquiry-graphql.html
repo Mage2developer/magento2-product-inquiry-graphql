@@ -1,0 +1,19 @@
+<!-- ko if: (isInquiries() && isModuleDisplayFront()) -->
+<div class="product-questions-container">
+    <p class="view-question">
+        <label class="action submit primary view-question" data-bind="text: $t('View Questions'), click: toggleQueAns"></label>
+    </p>
+    <ul class="question-listing" data-bind="foreach: {data: result().inquiry.items, as: 'inquiry'}">
+        <li class="question-container">
+            <p>
+                <label data-bind="text: $t('Question:')"></label>
+                <span data-bind="text: $t(inquiry.message)"></span>
+            </p>
+            <p>
+                <label data-bind="text: $t('Answer:')"></label>
+                <span data-bind="text: $t(inquiry.admin_message)"></span>
+            </p>
+        </li>
+    </ul>
+</div>
+<!-- /ko -->

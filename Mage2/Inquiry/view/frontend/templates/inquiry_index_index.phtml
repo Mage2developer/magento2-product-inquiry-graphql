@@ -1,0 +1,92 @@
+<?php
+/**
+ * Mage2developer
+ * Copyright (C) 2021 Mage2developer
+ *
+ * @category Mage2developer
+ * @package Mage2_Inquiry
+ * @copyright Copyright (c) 2021 Mage2developer
+ * @author Mage2developer <mage2developer@gmail.com>
+ */
+
+/**
+ * @var $block \Magento\Catalog\Block\Product\View
+ * @var $inquiryViewModel \Mage2\Inquiry\ViewModel\Inquiry
+ */
+
+$inquiryViewModel = $block->getInquiryViewModel();
+$_product         = $block->getProduct();
+?>
+<div id="inquiry-list" data-bind="scope: 'inquiry-graphql'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<form class="form testimonial"
+      action="<?= /* @noEscape */ $inquiryViewModel->getFormAction(); ?>"
+      id="product-inquiry-form"
+      method="post"
+      enctype="multipart/form-data"
+      data-hasrequired="<?=/* @noEscape */ __('* Required Fields') ?>"
+      data-mage-init='{"validation":{}}'>
+
+    <input type="hidden" name="sku" value="<?= /* @noEscape */ $_product->getSku(); ?>" type="text">
+    <fieldset class="fieldset">
+
+        <div class="field name required">
+            <label class="label" for="name"><span><?= /* @noEscape */ __('Name') ?></span></label>
+            <div class="control">
+                <input name="name" id="name" title="<?= /* @noEscape */ __('Name') ?>"
+                       value="" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+
+        <div class="field email required">
+            <label class="label" for="email"><span><?= /* @noEscape */ __('Email') ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?= /* @noEscape */ __('Email') ?>" value="" class="input-text"
+                       type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+
+        <div class="field mobile_number">
+            <label class="label" for="mobile_number"><span><?= /* @noEscape */ __('Mobile Number') ?></span></label>
+            <div class="control">
+                <input name="mobile_number" id="mobile_number" title="<?= /* @noEscape */ __('Mobile Number') ?>"
+                       value="" class="input-text" type="text"/>
+            </div>
+        </div>
+
+        <div class="field message required">
+            <label class="label" for="message"><span><?= /* @noEscape */ __('Message') ?></span></label>
+            <div class="control">
+                <textarea name="message" id="message" title="<?= /* @noEscape */ __('What’s on your mind?') ?>"
+                          class="input-text" data-validate="{required:true}" cols="5" rows="3"></textarea>
+            </div>
+        </div>
+
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="<?= /* @noEscape */ __('Submit') ?>" class="action submit primary">
+                <span><?= /* @noEscape */ __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<script type="text/x-magento-init">
+    {
+        "#inquiry-list": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "inquiry-graphql": {
+                        "component": "Mage2_Inquiry/js/view/inquiry-graphql",
+                        "currentProductSku": "<?= $_product->getSku() ?>",
+                        "isDisplayFront": "<?= $inquiryViewModel->getQuestionDisplaySetting() ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>

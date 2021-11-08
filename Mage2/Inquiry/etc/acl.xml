@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mage2developer
+ * Copyright (C) 2021 Mage2developer
+ *
+ * @category Mage2developer
+ * @package Mage2_Inquiry
+ * @copyright Copyright (c) 2021 Mage2developer
+ * @author Mage2developer <mage2developer@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin" title="Magento Admin">
+                <resource id="Magento_Backend::stores" title="Stores">
+                    <resource id="Magento_Backend::stores_settings" title="Settings">
+                        <resource id="Magento_Config::config" title="Configuration">
+                            <resource id="Mage2_Inquiry::mage2_configuration" title="Mage2Developer" sortOrder="51"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

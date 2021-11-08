@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mage2developer
+ * Copyright (C) 2021 Mage2developer
+ *
+ * @category Mage2developer
+ * @package Mage2_Inquiry
+ * @copyright Copyright (c) 2021 Mage2developer
+ * @author Mage2developer <mage2developer@gmail.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View" ifconfig="mage2_product_inquiry_section/general/enabled"
+                   name="product.inquiry" as="product.inquiry" after="-"
+                   template="Mage2_Inquiry::inquiry_index_index.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="title" xsi:type="string" translate="true">Product Inquiry</argument>
+                    <argument name="inquiry_view_model" xsi:type="object">Mage2\Inquiry\ViewModel\Inquiry</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mage2developer
+ * Copyright (C) 2021 Mage2developer
+ *
+ * @category Mage2developer
+ * @package Mage2_Inquiry
+ * @copyright Copyright (c) 2021 Mage2developer
+ * @author Mage2developer <mage2developer@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="product_inquiry_form" label="Product Inquiry form" file="inquiry.html" type="html"
+              module="Mage2_Inquiry" area="frontend"/>
+    <template id="inquiry_reply" label="Product Inquiry Reply Form" file="inquiry_reply.html" type="html"
+              module="Mage2_Inquiry" area="adminhtml"/>
+    <template id="product_inquiry_form_admin" label="Product Inquiry Admin Email Form" file="inquiry_admin.html"
+              type="html" module="Mage2_Inquiry" area="frontend"/>
+</config>

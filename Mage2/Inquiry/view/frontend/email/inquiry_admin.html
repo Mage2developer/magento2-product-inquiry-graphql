@@ -1,0 +1,30 @@
+<!--@subject Custom Product Inquiry @-->
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr>
+        <td><b>{{trans "Customer Name"}}</b></td>
+        <td>{{var customer_name}}</td>
+    </tr>
+    <tr>
+        <td><b>{{trans "Email"}}</b></td>
+        <td>{{var email}}</td>
+    </tr>
+    <tr>
+        <td><b>{{trans "Mobile Number"}}</b></td>
+        <td>{{var mobile_number}}</td>
+    </tr>
+    <tr>
+        <td><b>{{trans "Inquiry"}}</b></td>
+        <td>{{var message}}</td>
+    </tr>
+    <tr>
+        <td><b>{{trans "Product Information"}}</b></td>
+        <td><a href='{{var product_url}}'>{{var product_name}}</a>,&nbsp;&nbsp; <b>{{trans "SKU :"}}</b> {{var product_sku}}</td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}
