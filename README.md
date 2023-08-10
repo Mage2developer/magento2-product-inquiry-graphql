@@ -25,7 +25,7 @@
 <li>PSR-4 coding standard followed</li>
 </ul>
 
-<p><b>Compitable :- </b> <b>Magento 2.2.*, 2.3.*, 2.4.* </b></p>
+<p><b>Compitable :- </b> <b>Magento 2.2.*, 2.3.*, 2.4.2 </b></p>
 
 <p>In the case of any other queries regarding this extension:</p>
 <p>Contact us at <b>mage2developer@gmail.com || shishangiya.yogesh@gmail.com </b> or Skype : <b>mage2developer</b> and we will be all happy to assist you!</p>
